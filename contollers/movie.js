@@ -8,7 +8,7 @@ const created = 201;
 
 const getMovie = (req, res, next) => {
   const owner = req.user._id;
-  movieModel.find(owner)
+  movieModel.find({ owner })
     .then((movie) => res.status(ok).send(movie))
     .catch(next);
 };
