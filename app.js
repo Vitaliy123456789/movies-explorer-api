@@ -6,8 +6,8 @@ const router = require('./routes/index');
 const errorCentre = require('./middlewares/errorCentre');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { dataMovies, port, } = require('./utilits')
-mongoose.connect(dataMovies, {
+const port = 3000;
+mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb', {
   useNewUrlParser: true,
 }).then(() => {
   console.log('connected to db');
